@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "RUNNING modules/template-module/install/common/common.sh"
-export MODULE_ROOT="$ROOT/modules/template-module"
+echo "RUNNING modules/android-auto-module/install/common/common.sh"
+export MODULE_ROOT="$ROOT/modules/android-auto-module"
 
 # --- CONFIGURATION ---
 MODULE_NAME=$(basename "$MODULE_ROOT")   # infer module name from dir name
@@ -17,19 +17,19 @@ docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" "$MODULE_ROOT/docker/common"
 
 # # --- INSTALL SYSTEMD SERVICE ---
 echo "Installing systemd service: $SERVICE_DST"
-sudo cp "$SERVICE_SRC" "$SERVICE_DST"
-sudo chmod 644 "$SERVICE_DST"
+# sudo cp "$SERVICE_SRC" "$SERVICE_DST"
+# sudo chmod 644 "$SERVICE_DST"
 
 # # Reload systemd to pick up new/changed service file
 echo "Reloading systemd daemon"
-sudo systemctl daemon-reload
+# sudo systemctl daemon-reload
 
 # # --- ENABLE & START SERVICE ---
 echo "Enabling $MODULE_ID.service"
-sudo systemctl enable "$MODULE_ID.service"
+# sudo systemctl enable "$MODULE_ID.service"
 
 echo "Starting $MODULE_ID.service"
-sudo systemctl restart "$MODULE_ID.service"
+# sudo systemctl restart "$MODULE_ID.service"
 
 echo "Deployment complete for module: $MODULE_ID"
 
