@@ -1,0 +1,3 @@
+[submodule "src/openauto_rpi5"]
+	path = src/openauto_rpi5
+	url = git@github.com:MCCVargues/openauto_rpi5.git
