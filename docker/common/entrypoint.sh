@@ -9,7 +9,6 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release .. 
 make -j8
-make install
 
 # Patch OpenAuto
 sed -i \
