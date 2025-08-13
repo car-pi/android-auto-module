@@ -1,6 +1,8 @@
 [submodule "src/openauto_rpi5"]
 	path = src/openauto_rpi5
 	url = git@github.com:MCCVargues/openauto_rpi5.git
+	ignore = all
 [submodule "src/aasdk_rpi5"]
 	path = src/aasdk_rpi5
 	url = git@github.com:MCCVargues/aasdk_rpi5.git
+	ignore = untracked
