@@ -20,6 +20,29 @@ RUN apt-get install -y --no-install-recommends pulseaudio librtaudio-dev libtag1
 RUN apt-get -y install --no-install-recommends pv unzip kpartx zerofree qemu-user-static binfmt-support
 RUN apt-get install -y --no-install-recommends qtbase5-dev qttools5-dev-tools  qtmultimedia5-dev libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5 libqt5bluetooth5 libqt5bluetooth5-bin qtconnectivity5-dev
 
+RUN apt-get -y install --no-install-recommends \
+    weston
+
+RUN apt-get -y install --no-install-recommends \
+    qtwayland5
+
+RUN apt-get -y install --no-install-recommends \
+    xwayland
+
+RUN apt-get -y install --no-install-recommends \
+    usbutils
+
+RUN apt-get -y install --no-install-recommends \
+    android-tools-adb
+
+RUN apt-get -y install --no-install-recommends \
+    bluez dbus
+
+RUN apt-get -y install --no-install-recommends \
+    pulseaudio pulseaudio-utils
+
+RUN usermod -aG pulse,pulse-access root
+
 RUN rm -rf /var/lib/apt/lists/*
 
 # Set a working directory

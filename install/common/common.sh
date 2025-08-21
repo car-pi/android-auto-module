@@ -29,7 +29,7 @@ echo "Enabling $MODULE_ID.service"
 sudo systemctl enable "$MODULE_ID.service"
 
 echo "Starting $MODULE_ID.service"
-sudo systemctl restart "$MODULE_ID.service"
+# sudo systemctl restart "$MODULE_ID.service"
 
 echo "Deployment complete for module: $MODULE_ID"
 

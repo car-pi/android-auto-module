@@ -27,7 +27,9 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j8
 
-while true; do
-  sleep 1
-  echo "Spinning"
-done
+# while true; do
+#   sleep 1
+#   echo "Spinning"
+# done
+export QT_QPA_PLATFORM=wayland
+bash
