@@ -6,3 +6,12 @@
 	path = src/aasdk_rpi5
 	url = git@github.com:MCCVargues/aasdk_rpi5.git
 	ignore = untracked
+[submodule "src/openauto"]
+	path = src/openauto
+	url = git@github.com:opencardev/openauto.git
+[submodule "src/aasdk"]
+	path = src/aasdk
+	url = git@github.com:opencardev/aasdk.git
+[submodule "src/userland"]
+	path = src/userland
+	url = git@github.com:raspberrypi/userland.git

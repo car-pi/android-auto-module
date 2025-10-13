@@ -40,8 +40,17 @@ RUN apt-get -y install --no-install-recommends \
 
 RUN apt-get -y install --no-install-recommends \
     pulseaudio pulseaudio-utils
+    
+RUN apt-get -y install --no-install-recommends \
+    libgps-dev gpsd
 
-RUN usermod -aG pulse,pulse-access root
+RUN apt-get -y install --no-install-recommends \
+    xterm
+
+RUN apt-get -y install --no-install-recommends \
+    gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools
+
+# RUN usermod -aG pulse,pulse-access root
 
 RUN rm -rf /var/lib/apt/lists/*
 

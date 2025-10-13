@@ -9,22 +9,20 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release .. 
 make -j8
-
-# Patch OpenAuto
-sed -i \
-    -e 's|set(AASDK_INCLUDE_DIRS "/usr/local/include")|set(AASDK_INCLUDE_DIRS "/home/ubuntu/aasdk/include")|' \
-    -e 's|set(AASDK_LIBRARIES "/usr/local/lib/libaasdk.so")|set(AASDK_LIBRARIES "/home/ubuntu/aasdk/lib/libaasdk.so")|' \
-    -e 's|set(AASDK_PROTO_INCLUDE_DIRS "/usr/local/include")|set(AASDK_PROTO_INCLUDE_DIRS "/home/ubuntu/aasdk/build")|' \
-    -e 's|set(AASDK_PROTO_LIBRARIES "/home/mccv/aasdk_rpi5/lib/libaasdk_proto.so")|set(AASDK_PROTO_LIBRARIES "/home/ubuntu/aasdk/lib/libaasdk_proto.so")|' \
-    "/home/ubuntu/openauto/CMakeLists.txt"
+# make install
 
 # Build Openauto
 cd /home/ubuntu
 cd openauto
-# rm -rf build
+# # rm -rf build
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_BUILD_TYPE=Release \
+  -DNOPI=ON \
+  -DAASDK_INCLUDE_DIR=/home/ubuntu/aasdk/include \
+  -DAASDK_LIB_DIR=/home/ubuntu/aasdk/build/lib/libaasdk.so \
+  -DAAP_PROTOBUF_INCLUDE_DIR=/home/ubuntu/aasdk/build/protobuf \
+  -DAAP_PROTOBUF_LIB_DIR=/home/ubuntu/aasdk/build/lib/libaap_protobuf.so ..
 make -j8
 
 # while true; do
